@@ -1,10 +1,10 @@
 # Spam Detection Module
 
-This repository contains the implementation of the spam detection module for our cybersecurity platform. The module is based on the methodology introduced in the JPMorgan paper "Spam-T5: Benchmarking Large Language Models for Few-Shot Email Spam Detection" (JPMorgan, 2023). This paper explores the effectiveness of large language models (LLMs) in email spam detection and introduces Spam-T5, a fine-tuned version of Google's Flan-T5 model specifically adapted for this purpose.
+This repository contains the implementation of the spam detection module for our cybersecurity platform. The module is based on the methodology introduced in the JPMorgan paper ["Spam-T5: Benchmarking Large Language Models for Few-Shot Email Spam Detection" (Labonne & Moran, 2023)](https://arxiv.org/abs/2304.01238). This paper explores the effectiveness of large language models (LLMs) in email spam detection and introduces Spam-T5, a fine-tuned version of Google's Flan-T5 model specifically adapted for this purpose.
 
 ## Overview
 
-In our attempt to replicate the Spam-T5 model, we followed a similar approach by referencing JPMorgan’s open-sourced work on GitHub, with some modifications. Instead of the datasets used by JPMorgan, we employed the Enron 2006, TREC 2005, TREC 2006, and TREC 2007 datasets retrieved through the Kaggle API. These datasets provided over 150,000 samples, offering a robust foundation for training our spam detector.
+We reproduced the model by referencing JPMorgan’s open-sourced work on [GitHub]](https://github.com/jpmorganchase/llm-email-spam-detection), with some modifications. Instead of the datasets used by JPMorgan, we employed the Enron 2006, TREC 2005, TREC 2006, and TREC 2007 datasets retrieved through the Kaggle API. 
 
 ## Performance Metrics
 
@@ -23,6 +23,11 @@ Our trained model is made available on [HuggingFace](https://huggingface.co/peri
 
 ## References
 
-- Maxime Labonne, Sean Moran ["Spam-T5: Benchmarking Large Language Models for Few-Shot Email Spam Detection"]([https://[doi](https://arxiv.org/abs/2304.01238).org/10.1016/j.ins.2019.01.064](https://arxiv.org/abs/2304.01238))
+- Maxime Labonne, Sean Moran ["Spam-T5: Benchmarking Large Language Models for Few-Shot Email Spam Detection"](https://arxiv.org/abs/2304.01238)
 - [GitHub Repository for Spam-T5](https://github.com/jpmorganchase/llm-email-spam-detection)
+- [Enron 2006 dataset](https://www.kaggle.com/datasets/bayes2003/emails-for-spam-or-ham-classification-enron-2006?select=email_text.csv)
+- [Trec 2005 dataset](https://www.kaggle.com/datasets/bayes2003/emails-for-spam-or-ham-classification-trec-2005?select=email_text.csv)
+- [Trec 2006 dataset](https://www.kaggle.com/datasets/bayes2003/emails-for-spam-or-ham-classification-trec-2006?select=email_text.csv)
+- [Trec 2007 dataset](https://www.kaggle.com/datasets/bayes2003/emails-for-spam-or-ham-classification-trec-2007?select=email_text.csv)
+
 
