@@ -1,28 +1,28 @@
-# Suspicious URL Detection Module
+# Spam Detection Module
+
+This repository contains the implementation of the spam detection module for our cybersecurity platform. The module is based on the methodology introduced in the JPMorgan paper "Spam-T5: Benchmarking Large Language Models for Few-Shot Email Spam Detection" (JPMorgan, 2023). This paper explores the effectiveness of large language models (LLMs) in email spam detection and introduces Spam-T5, a fine-tuned version of Google's Flan-T5 model specifically adapted for this purpose.
 
 ## Overview
 
-The Suspicious URL Detection Module leverages machine learning techniques to identify potential phishing URLs. This module is based on the methodology introduced in the paper ["A new hybrid ensemble feature selection framework for machine learning-based phishing detection system"](https://doi.org/10.1016/j.ins.2019.01.064) by Kang Leng Chiew et al., 2019.
+In our attempt to replicate the Spam-T5 model, we followed a similar approach by referencing JPMorgan’s open-sourced work on GitHub, with some modifications. Instead of the datasets used by JPMorgan, we employed the Enron 2006, TREC 2005, TREC 2006, and TREC 2007 datasets retrieved through the Kaggle API. These datasets provided over 150,000 samples, offering a robust foundation for training our spam detector.
 
-The dataset used in this module comprises 5,000 phishing webpages and 5,000 legitimate webpages. It includes 48 features extracted from webpage URLs and HTML source codes, covering aspects like the presence of suspicious characters, subdomain levels, URL lengths, and more.
+## Performance Metrics
 
-## Dataset
+The performance of our spam detection module is summarized in the table below:
 
-The dataset used in this project is detailed in the aforementioned paper. The dataset (Phishing_Legitimate_full.csv) is downloaded from Kaggle (https://www.kaggle.com/datasets/shashwatwork/phishing-dataset-for-machine-learning/data).
+| Dataset  | F1 Score | Precision | Recall | Accuracy | Training Time (s) | Inference Time (s) |
+|----------|----------|-----------|--------|----------|-------------------|-------------------|
+| Enron    | 0.992    | 0.989     | 0.994  | 0.992    | 4960              | 49                |
+| TREC 2005| 0.987    | 0.989     | 0.986  | 0.989    | 9197              | 87                |
+| TREC 2006| 0.991    | 0.990     | 0.992  | 0.995    | 2853              | 28                |
+| TREC 2007| 0.995    | 0.997     | 0.994  | 0.995    | 8771              | 85                |
+| **Average** | **0.991** | **0.991** | **0.992** | **0.993** | **6445** | **62** |
 
-## Models
-
-Building on top of the pre-existing work, we trained both Random Forest and Neural Network (NN) models using this dataset. The performance metrics for both models are summarized below:
-
-| Model          | Precision | Recall  | F1 Score | Accuracy |
-|----------------|-----------|---------|----------|----------|
-| Random Forest  | 0.983     | 0.983   | 0.983    | 0.983    |
-| Neural Network | 0.956     | 0.957   | 0.957    | 0.957    |
-
-The trained Random Forest model (`random_forest_model.pkl`) and Neural Network model (`model.pth`) are included in this repository. 
+## Model
+Our trained model is made available on [HuggingFace](https://huggingface.co/periscopehf/capstone-email-classifier).
 
 ## References
 
-- Kang Leng Chiew, et al. ["A new hybrid ensemble feature selection framework for machine learning-based phishing detection system."](https://doi.org/10.1016/j.ins.2019.01.064)
-- [GitHub Repository for Scripts and Models](https://github.com/periscopegithub/Suspicious-URL-Detector.git)
+- Maxime Labonne, Sean Moran ["Spam-T5: Benchmarking Large Language Models for Few-Shot Email Spam Detection"]([https://[doi](https://arxiv.org/abs/2304.01238).org/10.1016/j.ins.2019.01.064](https://arxiv.org/abs/2304.01238))
+- [GitHub Repository for Spam-T5](https://github.com/jpmorganchase/llm-email-spam-detection)
 
