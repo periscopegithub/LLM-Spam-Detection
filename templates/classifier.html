@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Classifier</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Email Classifier</h1>
+        <form method="post">
+            <div class="form-group">
+                <textarea name="email" class="form-control" rows="10" placeholder="Paste your email here..."></textarea>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Classify">
+        </form>
+        {% if classification %}
+        <div class="alert alert-info mt-3">
+            <strong>Classification:</strong> {{ classification }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
